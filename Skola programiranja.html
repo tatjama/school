@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Skola programiranja</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style type="text/css">
+        body,
+        html {
+            height: 100%;
+            margin: 0px;
+        }
+        
+        ul {
+            color: white;
+            padding: 20px;
+        }
+        
+        li {
+            display: inline-block;
+            padding: 10px;
+            border: solid 2px white;
+            border-radius: 25%;
+            width: 100px;
+            text-align: center;
+        }
+        
+        a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        
+        p {
+            color: rgb(1, 1, 65);
+            font-size: 36px;
+            font-weight: bolder;
+        }
+        
+        #omotac {
+            background-image: url('slike/skola.jpg');
+            background-repeat: no-repeat;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.6;
+        }
+        
+        #pitanje {
+            width: 60%;
+            height: 60%;
+            border: solid 3px whitesmoke;
+            position: fixed;
+            left: 20%;
+            top: 30%;
+            padding: 10px;
+            background-color: white;
+            opacity: 0.8;
+        }
+        
+        button {
+            padding: 10px;
+            background-color: rgb(19, 5, 107);
+            opacity: 1;
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 20px;
+            cursor: pointer;
+        }
+        
+        #dugme1:hover,
+        li:hover {
+            background-color: purple;
+            opacity: 1;
+            color: white;
+            font-weight: bold;
+            font-size: large;
+        }
+        
+        #dugme2 {
+            position: relative;
+            /*transition: top 1s, left 1s;*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="omotac">
+        <ul id="navigacija">
+            <li><a href="#">HTML</a></li>
+            <li><a href="#"> CSS</a></li>
+            <li><a href="#"> JavaScript</a></li>
+            <li><a href="#"> PHP</a></li>
+            <li><a href="#"> Java</a></li>
+            <li><a href="#"> SQL</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+
+        <header>
+            <h1>MALA ŠKOLA PROGRAMIRANJA</h1>
+        </header>
+        <div id="pitanje">
+            <p>Da li volite da programirate?</p>
+
+            <button type="text" id="dugme1" onclick="da()">DA</button>
+            <button type="text" id="dugme2">NE</button>
+        </div>
+    </div>
+
+    <script>
+        /*
+                0. Zadatak sa biografijama (naucnicima) oplemeniti i umesto prompta uz pomoc eventova
+                pokupiti odgovarajuce informacije, a potom kreirati stranicu. Dozvoljeno je kreiranje 
+                stranice na kojoj ce se nalaziti buttoni/input polja i slicno i tako pokupiti broj 1, 2
+                ili 3 i naziv slike/naucnika
+                1.
+               
+                Kreirati sajt "Mala skola programiranja". sajt treba da sadrzi:
+                -pozadinsku sliku
+                -navigacioni bar(pocetni kursevi kontakt)
+                -na pocetnoj strani treba da se nalazi malo polje sa pitanjem "Da li volite
+                da programirate?" a ispod su dva button odgovora sa da i ne
+                - klikom na dugme DA izbacuje alert sa natpisom "Svaka cast! Buducnost je vasa!"
+                -prelaskom misa preko dugmeta NE treba dugme da pobegne na proizvoljni deo ekrana
+                (koristiti funkciju Random ---> Math.Random())
+                -sajt je neophodno ukrasiti odgovarajucim CSS elementima:)
+                2.
+                Kreirati "Mirror " sajt za izvrsavanje korisnickog unosa. Pozadinska slika bi trebalo da
+                bude ogledalo. Kucanjem teksta u input polje istovremeno u paragrafu ispod se ispisuje tekst u obrnutom poretku. Sajt ukrasiti odgovarajucim CSS elementima
+                */
+        function da() {
+            alert("Svaka čast! Budućnost je vaša!");
+        }
+
+        var dugme2 = document.getElementById('dugme2');
+        dugme2.addEventListener('mouseover', function() {
+
+            this.style.top = Math.floor(Math.random() * 200) + 'px';
+            this.style.left = Math.floor(Math.random() * 800) + 'px';
+        });
+
+        /*function ne(){
+               var leva =  Math.floor(Math.random()*800);
+               console.log(leva);
+               var vrh = Math.floor(Math.random()*200);
+               console.log(vrh);
+               var dugme2 = document.getElementById('dugme2');
+               dugme2.setAttribute('left', 'leva');
+               dugme2.setAttribute('top', 'vrh');
+            }*/
+    </script>
+
+</body>
+
+</html>
